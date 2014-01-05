@@ -11,9 +11,12 @@ public class OnClickButtons : MonoBehaviour {
 	}
 
 	void OnClick() {
-		PopupView.instance.OnInfect ();
+		PopupView.instance.OnNitro ();
 
 		PauseButtons ();
+
+		if(gameObject.name.Contains("btnNitro"))
+			PopupView.instance.OnUseNitro ();
 	}
 
 	void PauseButtons() {
@@ -33,7 +36,7 @@ public class OnClickButtons : MonoBehaviour {
 	}
 
 	void OnUnPause() {
-			Time.timeScale = 1;
-			PopupView.instance.pausePanel.SetActive (false);
+		Time.timeScale = 1;
+		PopupView.instance.pausePanel.SetActive (false);
 	} 
 }

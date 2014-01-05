@@ -25,6 +25,12 @@ public class PopupView : MonoBehaviour {
 	private bool isInfectAnimate;
 	#endregion
 
+	#region Nitro Fields
+	public UISlicedSprite btnNitroBG;
+	public GameObject btnNitroGlow;
+	private bool isOnNitro;
+	#endregion
+
 	void Awake() {
 		if (instance == null)
 			instance = this;
@@ -44,6 +50,7 @@ public class PopupView : MonoBehaviour {
 				infectTimer.text = "Infection: " + ((int)timer).ToString ();
 			} else if ((int)timer <= 0) {
 				StopCoroutine ("ShowInfection");
+				isInfectAnimate = false;
 				infectTimer.gameObject.SetActive (false);
 				OnInfected ();
 			}
@@ -53,6 +60,10 @@ public class PopupView : MonoBehaviour {
 			}
 		}
 		#endregion
+
+		if (isOnNitro) {
+			StartCoroutine ("ShowNitroGlow");
+		}
 	}
 
 	#region VACCINE
@@ -123,6 +134,31 @@ public class PopupView : MonoBehaviour {
 		infectLabel.SetActive (true);
 
 		iTween.ScaleTo (infectLabel, iTween.Hash("scale",new Vector3(650,180,0),"time",0.2f));
+	}
+	#endregion
+
+	#region NITRO
+	public void OnNitro() {
+		isOnNitro = true;
+		btnNitroBG.spriteName = "Auto Zombie_In Game Ui_Nitro Button_with green";
+	}
+
+	IEnumerator ShowNitroGlow() {
+		isOnNitro = false;
+		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(320,100,0),"time",1f));
+		yield return new WaitForSeconds (1f);
+		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(290,80,0),"time",1f));
+		yield return new WaitForSeconds (0.5f);
+		isOnNitro = true;
+		
+		StopCoroutine ("ShowNitroGlow");
+	}
+	
+	public void OnUseNitro() {
+		isOnNitro = false;
+		StopCoroutine ("ShowNitroGlow");
+		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(0,0,0),"time",1f));
+		btnNitroBG.spriteName = "Auto Zombie_In Game Ui_Nitro Button_empty";
 	}
 	#endregion
 }
