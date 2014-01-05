@@ -1,14 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Auto Zombie Main Menu\Scripts\CharacterSelection.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Auto Zombie Folders/Scripts/Items/ItemDestroy.cs">
     <Files>
-      <File FileName="Assets\_Racing Game Kit\Scripts\RGKCarUISpeedPush.cs" Line="21" Column="36" />
-      <File FileName="Assets\_Racing Game Kit\Scripts\Basic Vehicle\RGK_BasicCar.cs" Line="292" Column="10" />
-      <File FileName="Assets\_Racing Game Kit\Scripts\Basic Vehicle\RGK_BasicRacer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Auto Zombie Folders\Scripts\GameStats.cs" Line="7" Column="41" />
-      <File FileName="Assets\Auto Zombie Main Menu\Scripts\CharacterSelection.cs" Line="18" Column="2" />
-      <File FileName="Assets\Auto Zombie Main Menu\Scripts\CarSelection.cs" Line="40" Column="38" />
-      <File FileName="Assets\Auto Zombie Folders\Scripts\HumanCarAnimation.cs" Line="9" Column="40" />
+      <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemBounce.cs" Line="28" Column="5" />
+      <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemDestroy.cs" Line="28" Column="4" />
+      <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemRotate.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
