@@ -37,6 +37,7 @@ public class CarSelection : MonoBehaviour {
 			if (selected.Equals (keyName.ToString ())) {
 				car.renderer.material = carMaterials [index];
 				selectedCar = keyName;
+				GameStats.AZ_selectedCar = (int) selectedCar;
 			}
 
 		 	index++;

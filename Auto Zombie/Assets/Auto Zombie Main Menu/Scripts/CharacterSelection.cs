@@ -34,6 +34,7 @@ public class CharacterSelection : MonoBehaviour {
 			if (selected.Equals (keyName.ToString ())) {
 				character.renderer.material = characterMaterials [index];
 				selectedCharacter = keyName;
+				GameStats.AZ_selectedCharacter = (int) selectedCharacter;
 			}
 			
 			index++;

@@ -5,7 +5,8 @@ public class HumanCarAnimation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Debug.Log("AZ_selectedCar: " + GameStats.AZ_selectedCar);
+		Debug.Log("AZ_selectedCharacter: " + GameStats.AZ_selectedCharacter);
 	}
 	
 	// Update is called once per frame
