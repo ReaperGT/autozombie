@@ -37,30 +37,30 @@ profile
 # monodevelop project files
 *.metadata
 *metadata
-Auto Zombie/Library
-Auto Zombie/Temp
-Auto Zombie/Assembly-CSharp-Editor-vs.csproj
-Auto Zombie/Assembly-CSharp-Editor.csproj
-Auto Zombie/Assembly-CSharp-firstpass-vs.csproj
-Auto Zombie/Assembly-CSharp-firstpass.pidb
-Auto Zombie/Assembly-CSharp-vs.csproj
-Auto Zombie/Assembly-CSharp.csproj
-Auto Zombie/Assembly-CSharp.pidb
-Auto Zombie/Assembly-UnityScript.pidb
-Auto Zombie/assembly-csharp-firstpass.csproj
-Auto Zombie/assembly-unityscript-vs.unityproj
-Auto Zombie/assembly-unityscript.unityproj
-Auto Zombie/Assembly-UnityScript-Editor-firstpass-vs.unityproj
-Auto Zombie/Assembly-UnityScript-Editor-firstpass.unityproj
-Auto Zombie/Assembly-UnityScript-firstpass-vs.unityproj
-Auto Zombie/Assembly-UnityScript-firstpass.unityproj
-Auto Zombie/Assembly-UnityScript-vs.unityproj
-Auto Zombie/Assembly-UnityScript.unityproj
-Auto Zombie/RedsRevenge.userprefs
-Auto Zombie/Assembly-Boo-vs.booproj
-Auto Zombie/Assembly-Boo.booproj
-Auto Zombie/Build
-Auto\ Zombie/WarGolf
+Auto\ Zombie/Library
+Auto\ Zombie/Temp
+Auto\ Zombie/Assembly-CSharp-Editor-vs.csproj
+Auto\ Zombie/Assembly-CSharp-Editor.csproj
+Auto\ Zombie/Assembly-CSharp-firstpass-vs.csproj
+Auto\ Zombie/Assembly-CSharp-firstpass.pidb
+Auto\ Zombie/Assembly-CSharp-vs.csproj
+Auto\ Zombie/Assembly-CSharp.csproj
+Auto\ Zombie/Assembly-CSharp.pidb
+Auto\ Zombie/Assembly-UnityScript.pidb
+Auto\ Zombie/assembly-csharp-firstpass.csproj
+Auto\ Zombie/assembly-unityscript-vs.unityproj
+Auto\ Zombie/assembly-unityscript.unityproj
+Auto\ Zombie/Assembly-UnityScript-Editor-firstpass-vs.unityproj
+Auto\ Zombie/Assembly-UnityScript-Editor-firstpass.unityproj
+Auto\ Zombie/Assembly-UnityScript-firstpass-vs.unityproj
+Auto\ Zombie/Assembly-UnityScript-firstpass.unityproj
+Auto\ Zombie/Assembly-UnityScript-vs.unityproj
+Auto\ Zombie/Assembly-UnityScript.unityproj
+Auto\ Zombie/RedsRevenge.userprefs
+Auto\ Zombie/Assembly-Boo-vs.booproj
+Auto\ Zombie/Assembly-Boo.booproj
+Auto\ Zombie/Build
+Auto\ Zombie/Auto\ Zombie
 .DS_Store
   
 *.userprefs
