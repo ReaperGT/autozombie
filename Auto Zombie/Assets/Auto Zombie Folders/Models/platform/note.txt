@@ -1,0 +1,4 @@
+Platform model
+
+animation (24fps)
+frames 0-100 rotation

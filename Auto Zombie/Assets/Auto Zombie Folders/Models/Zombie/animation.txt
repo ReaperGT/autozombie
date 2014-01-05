@@ -1,0 +1,8 @@
+zombie with car animation
+*120frames (24frames per second)
+
+frames 1-40 idle/moving
+frames 40-70 turning right
+frames 80-100 turning left
+
+*temporary texture only
