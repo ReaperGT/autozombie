@@ -35,8 +35,9 @@ profile
 *.OTHER
 
 # monodevelop project files
-
-"Auto Zombie"/Library
+*.metadata
+*metadata
+Auto Zombie/Library
 Auto Zombie/Temp
 Auto Zombie/Assembly-CSharp-Editor-vs.csproj
 Auto Zombie/Assembly-CSharp-Editor.csproj
