@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Auto Zombie Folders/Scripts/Items/ItemDestroy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Auto Zombie Main Menu/Libraries/NGUI/Examples/Scripts/Other/DownloadTexture.cs">
     <Files>
       <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemBounce.cs" Line="28" Column="5" />
       <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemDestroy.cs" Line="28" Column="4" />
-      <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemRotate.cs" Line="11" Column="3" />
+      <File FileName="Assets/Auto Zombie Folders/Scripts/Items/ItemRotate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Auto Zombie Main Menu/Libraries/NGUI/Examples/Scripts/Other/DownloadTexture.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
