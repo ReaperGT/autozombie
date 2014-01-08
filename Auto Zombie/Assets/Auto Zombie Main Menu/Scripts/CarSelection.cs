@@ -24,10 +24,8 @@ public class CarSelection : MonoBehaviour {
 	void Start () {
 		if (instance == null)
 			instance = this;
-	}
 
-	void Update () {
-	
+		GameStats.AZ_selectedCar = (int) CAR.RED;
 	}
 
 	public void SelectCar(string selected) {

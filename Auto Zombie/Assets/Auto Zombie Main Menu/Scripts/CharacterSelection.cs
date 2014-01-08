@@ -16,7 +16,7 @@ public class CharacterSelection : MonoBehaviour {
 
 	public GameObject character;
 	public Material[] characterMaterials = new Material[4];
-	[HideInInspector] public CHAR selectedCharacter;
+		[HideInInspector] public CHAR selectedCharacter;
 
 	void Awake() {
 		if (instance == null)
@@ -26,6 +26,8 @@ public class CharacterSelection : MonoBehaviour {
 	void Start() {
 		if (instance == null)
 			instance = this;
+
+		GameStats.AZ_selectedCharacter = (int) CHAR.COOL;
 	}
 
 	public void SelectCharacter(string selected) {

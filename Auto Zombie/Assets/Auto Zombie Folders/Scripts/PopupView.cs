@@ -83,12 +83,12 @@ public class PopupView : MonoBehaviour {
 		//TODO:change player texture
 		vaccinePanel.SetActive (true);
 		
-		iTween.ScaleTo (vaccineCenter, iTween.Hash("scale",new Vector3(500f,500f,500f),"time",0.2f));
-		yield return new WaitForSeconds (0.2f);
-		iTween.ScaleTo (vaccineGlow, iTween.Hash("scale",new Vector3(1136f,640f,1f),"time",0.2f));
-		yield return new WaitForSeconds (0.2f);
-		iTween.ScaleTo (vaccineRight, iTween.Hash("scale",new Vector3(150,150f,150f),"time",0.2f));
-		yield return new WaitForSeconds (0.2f);
+				iTween.ScaleTo (vaccineCenter, iTween.Hash("scale",new Vector3(500f,500f,500f),"time",0.1f));
+				yield return new WaitForSeconds (0.1f);
+				iTween.ScaleTo (vaccineGlow, iTween.Hash("scale",new Vector3(1136f,640f,1f),"time",0.1f));
+				yield return new WaitForSeconds (0.1f);
+				iTween.ScaleTo (vaccineRight, iTween.Hash("scale",new Vector3(150,150f,150f),"time",0.1f));
+				yield return new WaitForSeconds (0.1f);
 		iTween.ScaleTo (vaccineLeft, iTween.Hash("scale",new Vector3(100f,100f,100f),"time",0.2f));
 
 
