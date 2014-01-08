@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PopupView : MonoBehaviour {
 
@@ -32,10 +33,24 @@ public class PopupView : MonoBehaviour {
 	private bool isFilledNitro;
 	#endregion
 
-	public GameObject losePanel;
+	#region Lose Fields
+	public GameObject losePanelBackground;
+	public GameObject losePanelLabel;
+	#endregion
+
+	#region Win Fields
 	public GameObject winPanel;
+	public GameObject winPanelBackgroundLeft;
+	public GameObject winPanelBackgroundRight;
+	public GameObject winPanelLabel;
+	private bool isWin;
+	private float rotationValue;
+	#endregion
+
 	public GameObject mainButtonsPanel;
 	public GameObject popupButtonsPanel;
+
+		private GameObject[] AIobjects;
 
 	void Awake() {
 		if (instance == null)
@@ -70,6 +85,14 @@ public class PopupView : MonoBehaviour {
 		if (isOnNitro) {
 			StartCoroutine ("ShowNitroGlow");
 		}
+
+		if (isWin) {
+			winPanelBackgroundLeft.transform.rotation = Quaternion.Euler(0f, 0f, rotationValue); 
+			winPanelBackgroundRight.transform.rotation = Quaternion.Euler(0f, 0f, -(rotationValue));
+
+			rotationValue += 0.25f;
+			
+		}
 	}
 
 	#region VACCINE
@@ -83,13 +106,13 @@ public class PopupView : MonoBehaviour {
 		//TODO:change player texture
 		vaccinePanel.SetActive (true);
 		
-				iTween.ScaleTo (vaccineCenter, iTween.Hash("scale",new Vector3(500f,500f,500f),"time",0.1f));
-				yield return new WaitForSeconds (0.1f);
-				iTween.ScaleTo (vaccineGlow, iTween.Hash("scale",new Vector3(1136f,640f,1f),"time",0.1f));
-				yield return new WaitForSeconds (0.1f);
-				iTween.ScaleTo (vaccineRight, iTween.Hash("scale",new Vector3(150,150f,150f),"time",0.1f));
-				yield return new WaitForSeconds (0.1f);
-		iTween.ScaleTo (vaccineLeft, iTween.Hash("scale",new Vector3(100f,100f,100f),"time",0.2f));
+		iTween.ScaleTo (vaccineCenter, iTween.Hash("scale",new Vector3(500f,500f,500f),"time",0.1f));
+		yield return new WaitForSeconds (0.1f);
+		iTween.ScaleTo (vaccineGlow, iTween.Hash("scale",new Vector3(1136f,640f,1f),"time",0.1f));
+		yield return new WaitForSeconds (0.1f);
+		iTween.ScaleTo (vaccineRight, iTween.Hash("scale",new Vector3(150,150f,150f),"time",0.1f));
+		yield return new WaitForSeconds (0.1f);
+		iTween.ScaleTo (vaccineLeft, iTween.Hash("scale",new Vector3(100f,100f,100f),"time",0.1f));
 
 
 		yield return new WaitForSeconds (0.3f);
@@ -134,6 +157,7 @@ public class PopupView : MonoBehaviour {
 	}
 	
 	void OnInfected() {
+		mainButtonsPanel.SetActive (false);
 		infectBackground.SetActive (false);
 		infectBackground2.SetActive (false);
 		infectBackgroundEnd.SetActive (true);
@@ -219,17 +243,45 @@ public class PopupView : MonoBehaviour {
 	}
 	#endregion
 
+	#region LOSE
 	public void OnLose() {
-		losePanel.SetActive (true);		
+		StartCoroutine ("ShowLosePanel");
+	}
+
+	IEnumerator ShowLosePanel() {
+		mainButtonsPanel.SetActive (false);
+		iTween.MoveTo (losePanelBackground, iTween.Hash("y",0,"time",0.2f));
+		yield return new WaitForSeconds (0.2f);
+		iTween.ScaleTo (losePanelLabel, iTween.Hash("scale",new Vector3(500,200,0),"time",0.2f));
+		yield return new WaitForSeconds (0.5f);
+		OnShowLosePopup ();
+		StopCoroutine ("ShowLosePanel");
+
+		Time.timeScale = 0f;
+	}
+
+	#endregion
+
+	#region WIN
+	public void OnWin() {
+		mainButtonsPanel.SetActive (false);
+		winPanel.SetActive (true);
+		isWin = true;
+
+		iTween.ScaleTo (winPanelLabel, iTween.Hash("scale",new Vector3(615,102,0),"time",0.2f));
+
+		GameObject.FindGameObjectWithTag ("Player").gameObject.SetActive (false);
+		AIobjects = GameObject.FindGameObjectsWithTag ("AI");
+
+		foreach (GameObject go in AIobjects) {
+				go.SetActive (false);
+		}
+
 		OnShowLosePopup ();
 	}
+	#endregion
 
-	public void OnWin() {
-		winPanel.SetActive (true);
-	}
-
-	public void OnShowLosePopup() {
-		mainButtonsPanel.SetActive (false);
+	void OnShowLosePopup() {
 		popupButtonsPanel.SetActive (true);
 		GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ()._showRightWindow = false;
 	}

@@ -5,7 +5,7 @@ public class InGameStatusController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SoundManager.instance.PlayMainMenuBGM ();
+	
 	}
 	
 	// Update is called once per frame
@@ -16,12 +16,12 @@ public class InGameStatusController : MonoBehaviour {
 	void OnTriggerEnter(Collider collider) {
 
 		if (gameObject.name.Contains ("Finish")) {
-		if (collider.tag.Contains ("AI"))
-			PopupView.instance.OnLose ();
-		else if(collider.tag.Contains("Car"))
-			PopupView.instance.OnWin ();
 
-			Time.timeScale = 0f;
+			if (collider.tag.Contains ("AI"))
+				PopupView.instance.OnLose ();
+			else if(collider.tag.Contains("Car"))
+				PopupView.instance.OnWin ();
+
 		} else {
 			if (collider.tag.Contains ("AI")) {
 				PopupView.instance.OnInfect ();
