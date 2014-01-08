@@ -11,7 +11,6 @@ public class OnClickButtons : MonoBehaviour {
 	}
 
 	void OnClick() {
-		PopupView.instance.OnNitro ();
 
 		PauseButtons ();
 

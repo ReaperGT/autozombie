@@ -9,8 +9,7 @@ public class RGKCarUISpeedPush : MonoBehaviour {
         GameObject RaceManagerObject = GameObject.Find("_RaceManager");
         if (RaceManagerObject != null)
         {
-            RGKActiveUI = RaceManagerObject.GetComponent(typeof(RaceUIMobileSample)) as RaceUIMobileSample;
- 
+		 	RGKActiveUI = RaceManagerObject.GetComponent(typeof(RaceUIMobileSample)) as RaceUIMobileSample;
         }
 	}
 	

@@ -142,7 +142,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 
         iScreenWidth = Screen.width;
         iScreenHeigt = Screen.height;
-        windowRight = new Rect(iScreenWidth - 350, 50, 340, 215);
+				windowRight = new Rect(iScreenWidth - 285, 37, 340, 215);
         windowLeft = new Rect(10, 50, 300, 215);
         windowCountdownCharacter = new Rect(iScreenWidth / 2 - 300, iScreenHeigt / 2 - 100, 600, 200);
         windowCountdownImage = new Rect(iScreenWidth / 2 - 150, iScreenHeigt / 2 - 100, 300, 150);
@@ -394,37 +394,46 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
     {
 
 
-        string strPlayerStanding = "-";
-        if (PlayerDetails != null)
-        {
-            strPlayerStanding = PlayerDetails.RacerStanding.ToString();
-        }
+//        string strPlayerStanding = "-";
+//        if (PlayerDetails != null)
+//        {
+//            strPlayerStanding = PlayerDetails.RacerStanding.ToString();
+//        }
         ///RIVAL
-        GUI.Box(new Rect(65, 25, 180, 40), "", "TransparentBox");
-        if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 25, 39, 39), UI_Rival, ScaleMode.ScaleToFit); }
-        GUI.Label(new Rect(110, 33, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
+//        GUI.Box(new Rect(65, 25, 180, 40), "", "TransparentBox");
+//        if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 25, 39, 39), UI_Rival, ScaleMode.ScaleToFit); }
+//        GUI.Label(new Rect(110, 33, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
 
         ///LAP
-        GUI.Box(new Rect(65, 75, 180, 40), "", "TransparentBox");
-        if (UI_Lap != null) { GUI.DrawTexture(new Rect(65, 75, 39, 39), UI_Lap, ScaleMode.ScaleToFit); }
-        GUI.Label(new Rect(110, 82, 120, 30), _RaceManager.RaceActiveLap.ToString() + "/" + _RaceManager.RaceLaps.ToString(), "PL_LapLabelBig_White");
+//        GUI.Box(new Rect(65, 75, 180, 40), "", "TransparentBox");
+//        if (UI_Lap != null) { GUI.DrawTexture(new Rect(65, 75, 39, 39), UI_Lap, ScaleMode.ScaleToFit); }
+//        GUI.Label(new Rect(110, 82, 120, 30), _RaceManager.RaceActiveLap.ToString() + "/" + _RaceManager.RaceLaps.ToString(), "PL_LapLabelBig_White");
 
 
     }
 
     private void RenderRightWindow(int windowID)
     {
+		string strPlayerStanding = "-";
+		if (PlayerDetails != null)
+		{
+			strPlayerStanding = PlayerDetails.RacerStanding.ToString();
+		}
+
+		GUI.Box(new Rect(65, 0, 180, 40), "", "TransparentBox");
+		if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 0, 39, 39), UI_Rival, ScaleMode.ScaleToFit); }
+		GUI.Label(new Rect(110, 8, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
 
         ///SPEED
-        GUI.Box(new Rect(65, 25, 200, 40), "", "TransparentBox");
-        if (UI_Speed != null) { GUI.DrawTexture(new Rect(65, 25, 39, 39), UI_Speed, ScaleMode.ScaleToFit); }
-        GUI.Label(new Rect(110, 35, 105, 20), String.Format("{0:0}", PlayerSpeed), "Speed_Value");
-        GUI.Label(new Rect(220, 47, 40, 20), "KMH", "Speed_Text");
+//        GUI.Box(new Rect(65, 25, 200, 40), "", "TransparentBox");
+//        if (UI_Speed != null) { GUI.DrawTexture(new Rect(65, 25, 39, 39), UI_Speed, ScaleMode.ScaleToFit); }
+//        GUI.Label(new Rect(110, 35, 105, 20), String.Format("{0:0}", PlayerSpeed), "Speed_Value");
+//        GUI.Label(new Rect(220, 47, 40, 20), "KMH", "Speed_Text");
 
         ///TIME
-        GUI.Box(new Rect(65, 75, 200, 40), "", "TransparentBox");
-        if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 75, 39, 39), UI_Time, ScaleMode.ScaleToFit); }
-        GUI.Label(new Rect(100, 87, 180, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "PL_LapLabelBig_White");
+//        GUI.Box(new Rect(65, 75, 200, 40), "", "TransparentBox");
+//        if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 75, 39, 39), UI_Time, ScaleMode.ScaleToFit); }
+//        GUI.Label(new Rect(100, 87, 180, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "PL_LapLabelBig_White");
 
     }
 

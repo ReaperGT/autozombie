@@ -10,25 +10,32 @@ public enum PowerUp {
 public class ItemDestroy : MonoBehaviour {
 	
 	public PowerUp powerUp;
-	
+
 	void OnTriggerEnter(Collider collider) {
-		Debug.Log("Enter!");
+	
 		switch (powerUp) {
-		case PowerUp.PowerUpBoost:
-			// Add - Boost
-			break;
-		case PowerUp.PowerUpNitro:
-			// Add - Nitro
-			break;
-		case PowerUp.PowerUpVaccine:
-			// Add - Vaccine
-			break;
-		default:
-			break;
+			case PowerUp.PowerUpNitro:
+				
+				if (collider.CompareTag("CarChasisCollider")) {
+					PopupView.instance.OnNitro();
+					Destroy(this.gameObject);
+				}
+				break;
+			case PowerUp.PowerUpVaccine:
+				
+				if (collider.CompareTag("CarChasisCollider")) {
+					PopupView.instance.OnVaccine ();
+					Destroy(this.gameObject);
+				}
+				break;
 		}
-		
-		if (collider.CompareTag("CarChasisCollider")) {
-			Destroy(this.gameObject);
+
+	}
+
+	void OnTriggerExit(Collider collider) {
+		if (powerUp == PowerUp.PowerUpBoost &&
+		    collider.CompareTag ("CarChasisCollider")) {
+				PopupView.instance.OnBoostLight ();
 		}
 	}
 	

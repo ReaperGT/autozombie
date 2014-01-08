@@ -29,7 +29,13 @@ public class PopupView : MonoBehaviour {
 	public UISlicedSprite btnNitroBG;
 	public GameObject btnNitroGlow;
 	private bool isOnNitro;
+	private bool isFilledNitro;
 	#endregion
+
+	public GameObject losePanel;
+	public GameObject winPanel;
+	public GameObject mainButtonsPanel;
+	public GameObject popupButtonsPanel;
 
 	void Awake() {
 		if (instance == null)
@@ -68,6 +74,8 @@ public class PopupView : MonoBehaviour {
 
 	#region VACCINE
 	public void OnVaccine() {
+		isInfected = false;
+		ResetInfect ();
 		StartCoroutine ("ShowVaccineAnimation");
 	}
 
@@ -104,17 +112,15 @@ public class PopupView : MonoBehaviour {
 
 	#region INFECT
 	public void OnInfect() {
-		//TODO: change player texture
-		infectBackground.SetActive (false);
-		infectBackground2.SetActive (false);
-		infectBackgroundEnd.SetActive (false);
-		infectLabel.SetActive (false);
-		iTween.ScaleTo (infectLabel, iTween.Hash("scale",new Vector3(0,0,0),"time",0.2f));
+		if (!isInfected) {
+			OnInfectLight ();
+			ResetInfect ();
 
-		timer = 11;
-		infectTimer.gameObject.SetActive (true);
-		isInfected = true;
-		isInfectAnimate = true;
+			timer = 11;
+			infectTimer.gameObject.SetActive (true);
+			isInfected = true;
+			isInfectAnimate = true;
+		}
 	}
 
 	IEnumerator ShowInfection() {
@@ -134,6 +140,24 @@ public class PopupView : MonoBehaviour {
 		infectLabel.SetActive (true);
 
 		iTween.ScaleTo (infectLabel, iTween.Hash("scale",new Vector3(650,180,0),"time",0.2f));
+
+		Time.timeScale = 0f;
+
+		OnShowLosePopup ();
+	}
+
+	void ResetInfect() {
+		OffInfectLight ();
+		popupButtonsPanel.SetActive (false);
+		infectBackground.SetActive (false);
+		infectBackground2.SetActive (false);
+		infectBackgroundEnd.SetActive (false);
+		infectLabel.SetActive (false);
+		iTween.ScaleTo (infectLabel, iTween.Hash ("scale", new Vector3 (0, 0, 0), "time", 0.2f));
+		infectTimer.gameObject.SetActive (false);
+
+		isInfected = false;
+		isInfectAnimate = false;
 	}
 	#endregion
 
@@ -141,13 +165,14 @@ public class PopupView : MonoBehaviour {
 	public void OnNitro() {
 		isOnNitro = true;
 		btnNitroBG.spriteName = "Auto Zombie_In Game Ui_Nitro Button_with green";
+		isFilledNitro = true;
 	}
 
 	IEnumerator ShowNitroGlow() {
 		isOnNitro = false;
-		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(320,100,0),"time",1f));
+		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(230,230,0),"time",1f));
 		yield return new WaitForSeconds (1f);
-		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(290,80,0),"time",1f));
+		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(180,180,0),"time",1f));
 		yield return new WaitForSeconds (0.5f);
 		isOnNitro = true;
 		
@@ -155,10 +180,57 @@ public class PopupView : MonoBehaviour {
 	}
 	
 	public void OnUseNitro() {
-		isOnNitro = false;
-		StopCoroutine ("ShowNitroGlow");
-		iTween.ScaleTo (btnNitroGlow, iTween.Hash("scale",new Vector3(0,0,0),"time",1f));
-		btnNitroBG.spriteName = "Auto Zombie_In Game Ui_Nitro Button_empty";
+		if (isFilledNitro) {
+			OnNitroLight ();
+			isOnNitro = false;
+			StopCoroutine ("ShowNitroGlow");
+			iTween.ScaleTo (btnNitroGlow, iTween.Hash ("scale", new Vector3 (0, 0, 0), "time", 1f));
+			btnNitroBG.spriteName = "Auto Zombie_In Game Ui_Nitro Button_empty";
+			isFilledNitro = false;
+		}
 	}
 	#endregion
+
+	#region LIGHTS
+	void OnNitroLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/NitroLight").gameObject.SetActive(true);
+		Invoke ("OffNitroLight", 3.0f);
+	}
+
+	void OffNitroLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/NitroLight").gameObject.SetActive(false);
+	}
+
+	public void OnBoostLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/BoostLight").gameObject.SetActive(true);
+		Invoke ("OffBoostLight", 3.0f);
+	}
+
+	void OffBoostLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/BoostLight").gameObject.SetActive(false);
+	}
+
+	public void OnInfectLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/InfectLight").gameObject.SetActive(true);
+	}
+
+	void OffInfectLight() {
+		GameObject.FindWithTag ("Player").transform.FindChild ("PowerupLights/InfectLight").gameObject.SetActive(false);
+	}
+	#endregion
+
+	public void OnLose() {
+		losePanel.SetActive (true);		
+		OnShowLosePopup ();
+	}
+
+	public void OnWin() {
+		winPanel.SetActive (true);
+	}
+
+	public void OnShowLosePopup() {
+		mainButtonsPanel.SetActive (false);
+		popupButtonsPanel.SetActive (true);
+		GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ()._showRightWindow = false;
+	}
 }

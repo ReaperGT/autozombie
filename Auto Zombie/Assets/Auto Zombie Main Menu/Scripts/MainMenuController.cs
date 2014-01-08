@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public enum MMSCREEN {
@@ -52,6 +52,8 @@ public class MainMenuController : MonoBehaviour {
 	void Start () {
 		if (instance == null)
 			instance = this;	
+
+		SoundManager.instance.PlayMainMenuBGM ();
 	}
 	
 	public void SwitchScreens(MMSCREEN toScreen) {
