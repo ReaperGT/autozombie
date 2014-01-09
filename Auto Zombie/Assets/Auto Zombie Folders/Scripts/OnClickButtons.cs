@@ -22,7 +22,7 @@ public class OnClickButtons : MonoBehaviour {
 			OnPause ();
 		if (gameObject.name.Contains ("btnRetry"))
 			Application.LoadLevel (1);
-		if (gameObject.name.Contains ("btnQuit"))
+		if (gameObject.name.Contains ("btnQuit") || gameObject.name.Contains("btnHome"))
 			Application.LoadLevel (0);
 		if (gameObject.name.Contains ("btnPlay"))
 			OnUnPause ();

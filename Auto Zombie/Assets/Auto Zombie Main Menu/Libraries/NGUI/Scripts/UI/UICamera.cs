@@ -676,14 +676,15 @@ public class UICamera : MonoBehaviour
 		// If it's time to show a tooltip, inform the object we're hovering over
 		if (useMouse && mHover != null)
 		{
-			float scroll = Input.GetAxis(scrollAxisName);
-			if (scroll != 0f) Notify(mHover, "OnScroll", scroll);
-
-			if (mTooltipTime != 0f && mTooltipTime < Time.realtimeSinceStartup)
-			{
-				mTooltip = mHover;
-				ShowTooltip(true);
-			}
+			//EDITED:
+//			float scroll = Input.GetAxis(scrollAxisName);
+//			if (scroll != 0f) Notify(mHover, "OnScroll", scroll);
+//
+//			if (mTooltipTime != 0f && mTooltipTime < Time.realtimeSinceStartup)
+//			{
+//				mTooltip = mHover;
+//				ShowTooltip(true);
+//			}
 		}
 		current = null;
 	}
