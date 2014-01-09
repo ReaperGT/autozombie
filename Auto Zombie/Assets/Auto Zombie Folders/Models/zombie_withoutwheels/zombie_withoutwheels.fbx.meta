@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: f2aa1261a87dcd740ba8f8c7b7388249
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: joint31
+    100002: joint34
+    100004: joint38
+    100006: joint41
+    100008: polySurface298
+    100010: polySurface332
+    100012: //RootNode
+    100014: zombiewithrig:joint10
+    100016: zombiewithrig:joint11
+    100018: zombiewithrig:joint12
+    100020: zombiewithrig:joint13
+    100022: zombiewithrig:joint14
+    100024: zombiewithrig:joint15
+    100026: zombiewithrig:joint16
+    100028: zombiewithrig:joint17
+    100030: zombiewithrig:joint18
+    100032: zombiewithrig:joint19
+    100034: zombiewithrig:joint2
+    100036: zombiewithrig:joint20
+    100038: zombiewithrig:joint21
+    100040: zombiewithrig:joint22
+    100042: zombiewithrig:joint23
+    100044: zombiewithrig:joint24
+    100046: zombiewithrig:joint25
+    100048: zombiewithrig:joint26
+    100050: zombiewithrig:joint27
+    100052: zombiewithrig:joint28
+    100054: zombiewithrig:joint29
+    100056: zombiewithrig:joint3
+    100058: zombiewithrig:joint30
+    100060: zombiewithrig:joint4
+    100062: zombiewithrig:joint5
+    100064: zombiewithrig:joint6
+    100066: zombiewithrig:joint7
+    100068: zombiewithrig:joint8
+    100070: zombiewithrig:joint9
+    100072: zombiewithrig:mrcool
+    100074: zombiewithrig:mrcool_rig
+    100076: zombiewithrig:polySurface298
+    400000: joint31
+    400002: joint34
+    400004: joint38
+    400006: joint41
+    400008: polySurface298
+    400010: polySurface332
+    400012: //RootNode
+    400014: zombiewithrig:joint10
+    400016: zombiewithrig:joint11
+    400018: zombiewithrig:joint12
+    400020: zombiewithrig:joint13
+    400022: zombiewithrig:joint14
+    400024: zombiewithrig:joint15
+    400026: zombiewithrig:joint16
+    400028: zombiewithrig:joint17
+    400030: zombiewithrig:joint18
+    400032: zombiewithrig:joint19
+    400034: zombiewithrig:joint2
+    400036: zombiewithrig:joint20
+    400038: zombiewithrig:joint21
+    400040: zombiewithrig:joint22
+    400042: zombiewithrig:joint23
+    400044: zombiewithrig:joint24
+    400046: zombiewithrig:joint25
+    400048: zombiewithrig:joint26
+    400050: zombiewithrig:joint27
+    400052: zombiewithrig:joint28
+    400054: zombiewithrig:joint29
+    400056: zombiewithrig:joint3
+    400058: zombiewithrig:joint30
+    400060: zombiewithrig:joint4
+    400062: zombiewithrig:joint5
+    400064: zombiewithrig:joint6
+    400066: zombiewithrig:joint7
+    400068: zombiewithrig:joint8
+    400070: zombiewithrig:joint9
+    400072: zombiewithrig:mrcool
+    400074: zombiewithrig:mrcool_rig
+    400076: zombiewithrig:polySurface298
+    4300000: polySurface332
+    4300002: zombiewithrig:mrcool
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface332
+    13700002: zombiewithrig:mrcool
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

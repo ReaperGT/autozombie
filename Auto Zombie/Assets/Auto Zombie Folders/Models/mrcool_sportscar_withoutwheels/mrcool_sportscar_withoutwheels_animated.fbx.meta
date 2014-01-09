@@ -74,8 +74,11 @@ ModelImporter:
     400066: mrcool_rig
     400068: //RootNode
     4300000: mrcool
-    7400000: Take 001
+    7400000: moving
+    7400002: turning L
+    7400004: turning R
     9500000: //RootNode
+    11100000: //RootNode
     13700000: mrcool
   materials:
     importMaterials: 1
@@ -91,7 +94,295 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: moving
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: car
+        weight: 1
+      - path: car_rig
+        weight: 1
+      - path: car_rig/joint41
+        weight: 1
+      - path: mrcool
+        weight: 1
+      - path: mrcool_rig
+        weight: 1
+      - path: mrcool_rig/joint2
+        weight: 1
+      - path: mrcool_rig/joint2/joint3
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: mrcool_rig/joint2/joint17
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20/joint23
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21/joint22
+        weight: 1
+      - path: mrcool_rig/joint2/joint24
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29/joint30
+        weight: 1
+      - path: mrcool_rig/joint6
+        weight: 1
+      - path: mrcool_rig/joint6/joint7
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: mrcool_rig/joint6/joint12
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15/joint16
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: turning R
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: car
+        weight: 1
+      - path: car_rig
+        weight: 1
+      - path: car_rig/joint41
+        weight: 1
+      - path: mrcool
+        weight: 1
+      - path: mrcool_rig
+        weight: 1
+      - path: mrcool_rig/joint2
+        weight: 1
+      - path: mrcool_rig/joint2/joint3
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: mrcool_rig/joint2/joint17
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20/joint23
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21/joint22
+        weight: 1
+      - path: mrcool_rig/joint2/joint24
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29/joint30
+        weight: 1
+      - path: mrcool_rig/joint6
+        weight: 1
+      - path: mrcool_rig/joint6/joint7
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: mrcool_rig/joint6/joint12
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15/joint16
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: turning L
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: car
+        weight: 1
+      - path: car_rig
+        weight: 1
+      - path: car_rig/joint41
+        weight: 1
+      - path: mrcool
+        weight: 1
+      - path: mrcool_rig
+        weight: 1
+      - path: mrcool_rig/joint2
+        weight: 1
+      - path: mrcool_rig/joint2/joint3
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4
+        weight: 1
+      - path: mrcool_rig/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: mrcool_rig/joint2/joint17
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint20/joint23
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21
+        weight: 1
+      - path: mrcool_rig/joint2/joint17/joint18/joint19/joint21/joint22
+        weight: 1
+      - path: mrcool_rig/joint2/joint24
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint27/joint28
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29
+        weight: 1
+      - path: mrcool_rig/joint2/joint24/joint25/joint26/joint29/joint30
+        weight: 1
+      - path: mrcool_rig/joint6
+        weight: 1
+      - path: mrcool_rig/joint6/joint7
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: mrcool_rig/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: mrcool_rig/joint6/joint12
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15
+        weight: 1
+      - path: mrcool_rig/joint6/joint12/joint13/joint14/joint15/joint16
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -127,5 +418,5 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   userData: 

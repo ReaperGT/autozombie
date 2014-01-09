@@ -50,7 +50,7 @@ public class PopupView : MonoBehaviour {
 	public GameObject mainButtonsPanel;
 	public GameObject popupButtonsPanel;
 
-		private GameObject[] AIobjects;
+	private GameObject[] AIobjects;
 
 	void Awake() {
 		if (instance == null)
@@ -161,22 +161,27 @@ public class PopupView : MonoBehaviour {
 		infectBackground.SetActive (false);
 		infectBackground2.SetActive (false);
 		infectBackgroundEnd.SetActive (true);
-		infectLabel.SetActive (true);
 
-		iTween.ScaleTo (infectLabel, iTween.Hash("scale",new Vector3(650,180,0),"time",0.2f));
-
-		Time.timeScale = 0f;
+		StartCoroutine("ShowInfectionLabel");
 
 		OnShowLosePopup ();
 	}
 
+	IEnumerator ShowInfectionLabel() {
+		iTween.ScaleTo (infectLabel, iTween.Hash("scale",new Vector3(650,180,0),"time",0.2f));
+		yield return new WaitForSeconds(0.4f);
+		Time.timeScale = 0f;
+
+		StopCoroutine("ShowInfectionLabel");
+	}
+
 	void ResetInfect() {
+		Time.timeScale = 1f;
 		OffInfectLight ();
 		popupButtonsPanel.SetActive (false);
 		infectBackground.SetActive (false);
 		infectBackground2.SetActive (false);
 		infectBackgroundEnd.SetActive (false);
-		infectLabel.SetActive (false);
 		iTween.ScaleTo (infectLabel, iTween.Hash ("scale", new Vector3 (0, 0, 0), "time", 0.2f));
 		infectTimer.gameObject.SetActive (false);
 
