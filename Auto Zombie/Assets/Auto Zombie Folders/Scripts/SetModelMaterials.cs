@@ -9,7 +9,7 @@ public class SetModelMaterials : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		character = GameObject.FindWithTag("Player").transform.FindChild("Chasis/mrcool_sportscar_withoutwheels/polySurface306").gameObject;
-		car = GameObject.FindWithTag("Player").transform.FindChild("Chasis/mrcool_sportscar_withoutwheels/polySurface319").gameObject;
+		car = GameObject.FindWithTag("Player").transform.FindChild("Chasis/mrcool_sportscar_withoutwheels/polySurface310").gameObject;
 
 		character.renderer.material = CharacterSelection.instance.characterMaterials [GameStats.AZ_selectedCharacter];
 		car.renderer.material = CarSelection.instance.carMaterials [GameStats.AZ_selectedCar];
