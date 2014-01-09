@@ -420,20 +420,20 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 			strPlayerStanding = PlayerDetails.RacerStanding.ToString();
 		}
 
-		GUI.Box(new Rect(65, 0, 180, 40), "", "TransparentBox");
+		GUI.Box(new Rect(65, 0, 200, 40), "", "TransparentBox");
 		if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 0, 39, 39), UI_Rival, ScaleMode.ScaleToFit); }
-		GUI.Label(new Rect(110, 8, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
+		GUI.Label(new Rect(130, 8, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
 
         ///SPEED
-//        GUI.Box(new Rect(65, 25, 200, 40), "", "TransparentBox");
-//        if (UI_Speed != null) { GUI.DrawTexture(new Rect(65, 25, 39, 39), UI_Speed, ScaleMode.ScaleToFit); }
-//        GUI.Label(new Rect(110, 35, 105, 20), String.Format("{0:0}", PlayerSpeed), "Speed_Value");
-//        GUI.Label(new Rect(220, 47, 40, 20), "KMH", "Speed_Text");
+//		GUI.Box(new Rect(65, 65, 200, 40), "", "TransparentBox");
+//		if (UI_Speed != null) { GUI.DrawTexture(new Rect(65, 65, 39, 39), UI_Speed, ScaleMode.ScaleToFit); }
+//		GUI.Label(new Rect(110, 75, 105, 20), String.Format("{0:0}", PlayerSpeed), "Speed_Value");
+//		GUI.Label(new Rect(220, 87, 40, 20), "KMH", "Speed_Text");
 
         ///TIME
-//        GUI.Box(new Rect(65, 75, 200, 40), "", "TransparentBox");
-//        if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 75, 39, 39), UI_Time, ScaleMode.ScaleToFit); }
-//        GUI.Label(new Rect(100, 87, 180, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "PL_LapLabelBig_White");
+		GUI.Box(new Rect(65, 65, 200, 40), "", "TransparentBox");
+		if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 65, 39, 39), UI_Time, ScaleMode.ScaleToFit); }
+		GUI.Label(new Rect(100, 77, 180, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "PL_LapLabelBig_White");
 
     }
 
