@@ -33,6 +33,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
     public Texture2D UI_Lap;
     public Texture2D UI_Speed;
     public Texture2D UI_Time;
+	public Texture2D UI_BestTime;
 
     public Texture2D _1stPlaceImage;
     public Texture2D _2ndPlaceImage;
@@ -54,7 +55,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 
 
     //Placement Info Window
-    private Rect windowRight;
+    public Rect windowRight;
     public bool _showRightWindow = true;
 
     //Lap Info Window
@@ -101,7 +102,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 
 
 
-    private Race_Manager _RaceManager = null;
+    public static Race_Manager _RaceManager = null;
     private List<Racer_Detail> RacerList;
     private Racer_Detail PlayerDetails;
     private bool PlayerChecked = false;
@@ -142,7 +143,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 
         iScreenWidth = Screen.width;
         iScreenHeigt = Screen.height;
-				windowRight = new Rect(iScreenWidth - 285, 37, 340, 215);
+		windowRight = new Rect(iScreenWidth - 225, 37, 340, 215);
         windowLeft = new Rect(10, 50, 300, 215);
         windowCountdownCharacter = new Rect(iScreenWidth / 2 - 300, iScreenHeigt / 2 - 100, 600, 200);
         windowCountdownImage = new Rect(iScreenWidth / 2 - 150, iScreenHeigt / 2 - 100, 300, 150);
@@ -420,9 +421,9 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 			strPlayerStanding = PlayerDetails.RacerStanding.ToString();
 		}
 
-		GUI.Box(new Rect(65, 0, 200, 40), "", "TransparentBox");
-		if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 0, 39, 39), UI_Rival, ScaleMode.ScaleToFit); }
-		GUI.Label(new Rect(130, 8, 120, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "PL_LapLabelBig_White");
+		GUI.Box(new Rect(65, 0, 135, 30), "", "TransparentBox");
+		if (UI_Rival != null) { GUI.DrawTexture(new Rect(65, 0, 29, 29), UI_Rival, ScaleMode.ScaleToFit); }
+		GUI.Label(new Rect(130, 0, 118, 30), strPlayerStanding + "/" + RacerList.Count.ToString(), "RaceResultsGridItems");
 
         ///SPEED
 //		GUI.Box(new Rect(65, 65, 200, 40), "", "TransparentBox");
@@ -431,10 +432,14 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 //		GUI.Label(new Rect(220, 87, 40, 20), "KMH", "Speed_Text");
 
         ///TIME
-		GUI.Box(new Rect(65, 65, 200, 40), "", "TransparentBox");
-		if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 65, 39, 39), UI_Time, ScaleMode.ScaleToFit); }
-		GUI.Label(new Rect(100, 77, 180, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "PL_LapLabelBig_White");
+		GUI.Box(new Rect(65, 45, 135, 30), "", "TransparentBox");
+		if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 45, 29, 29), UI_Time, ScaleMode.ScaleToFit); }
+		GUI.Label(new Rect(100, 49, 178, 20), FormatTime(_RaceManager.TimeTotal, false, 2), "RaceResultsGridItems");
 
+		///BEST TIME
+		GUI.Box(new Rect(65, 90, 135, 30), "", "TransparentBox");
+		if (UI_Time != null) { GUI.DrawTexture(new Rect(65, 90, 29, 29), UI_BestTime, ScaleMode.ScaleToFit); }
+		GUI.Label(new Rect(100, 94, 178, 20), FormatTime(GameStats.getBestTime(), false, 2), "RaceResultsGridItems");
     }
 
     private void RenderResultPlacementWindow(int windowID)
@@ -486,7 +491,7 @@ public class RaceUIMobileSample : MonoBehaviour, IRGKUI
 
     private void RenderResultsGridWindow(int windowID)
     {
-        GUI.Label(new Rect(windowResultsGrid.width - 410, 10, 400, 20), TrackName, "RaceResultsTrackTitle");
+        GUI.Label(new Rect(windowResultsGrid.width - 410, 10, 400, 20), TrackName, "	");
 
         float _fStartPoint = 60f;
 
