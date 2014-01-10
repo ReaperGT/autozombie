@@ -31,10 +31,25 @@ public class OnClickSelection : MonoBehaviour {
 			onDoubleClick();
 			touch =0;
 		}
+
+		if(gameObject.tag.Contains("btnStage"))
+			StageSelectionOnClick ();
 	}
 
 	void onDoubleClick() {
 		MainMenuController.instance.SwitchScreens (MMSCREEN.MMSTART);
 	}
 
+	
+		private GameObject[] btnStages;
+		void StageSelectionOnClick() {
+			btnStages = GameObject.FindGameObjectsWithTag ("btnStage");
+
+			foreach (GameObject go in btnStages) {
+				go.transform.FindChild ("BackgroundGlow").gameObject.SetActive (false);
+			}
+
+			gameObject.transform.FindChild ("BackgroundGlow").gameObject.SetActive (true);
+
+		}
 }

@@ -15,6 +15,7 @@ public class MainMenuController : MonoBehaviour {
 
 	#region Character Selection Fields
 	public GameObject character;
+	public GameObject characterSitting;
 	public GameObject characterSelection;
 	public GameObject directionalLight;
 	public GameObject characterSpotLight;
@@ -34,12 +35,17 @@ public class MainMenuController : MonoBehaviour {
 	public GameObject loadingPanel;
 	public GameObject mainMenuPanel;
 	public UISlider progressLoading;
+	public GameObject townPanel;
 
 	private Vector3 characterPosition1 = new Vector3(-0.8f,1.05f,2.85f);
 	private Vector3 characterPosition2 = new Vector3(-0.8f,1.23f,2.8f);
 	private Vector3 characterPosition3 = new Vector3(-0.05f,1.3f,1.9f);
 	private Vector3 characterPosition4 = new Vector3(-0.11f,0.86f,1.9f);
 	private MMSCREEN fromScreen;
+
+	#region Stage Selection Fields
+	public GameObject stageSelectionPanel;
+	#endregion
 
 	void Awake() {
 		if (instance == null)
@@ -48,14 +54,16 @@ public class MainMenuController : MonoBehaviour {
 		Time.timeScale = 1f;
 		loadingPanel.SetActive (false);
 		iTween.MoveTo (logo, iTween.Hash("position",new Vector3(0.6f,0.7f,2.8f),"time",3f));
-		SoundManager.instance.PlayMainMenuBGM ();
+//		SoundManager.instance.PlayMainMenuBGM ();
 	}
 
 	void Start () {
 		if (instance == null)
 			instance = this;	
+
+		
 	}
-	
+
 	public void SwitchScreens(MMSCREEN toScreen) {
 		
 		iTween.ScaleTo (logo, iTween.Hash("scale",new Vector3(0f,0f,0f),"time",0.2f));
@@ -89,6 +97,7 @@ public class MainMenuController : MonoBehaviour {
 	void OnCharacterSelection() {
 		btnSelectCharacter.SetActive (false);
 		btnSelectCar.SetActive (true);
+		stageSelectionPanel.SetActive (false);
 		iTween.MoveTo (btnStartRacing, iTween.Hash("y",-417f,"time",0.25f,"islocal",true));
 		iTween.ScaleTo (characterSelection, iTween.Hash("scale",new Vector3(2f,2f,2f),"time",0.25f));
 		StartCoroutine ("ShowCharacter");
@@ -99,9 +108,14 @@ public class MainMenuController : MonoBehaviour {
 		characterSpotLight.SetActive (true);
 
 		character.GetComponent<RotationMovement> ().enabled = false;
-
+//		characterSitting.GetComponent<RotationMovement> ().enabled = false;
+		
+//		iTween.RotateTo(characterSitting, iTween.Hash("rotation",new Vector3(0f,180f,0f),"time",0.25f));
 		iTween.RotateTo(character, iTween.Hash("rotation",new Vector3(0f,180f,0f),"time",0.25f));
+		characterSitting.SetActive (false);
+		character.SetActive (true);
 		iTween.MoveTo (character, iTween.Hash("position",characterPosition2,"time",0.25f,"easetype",iTween.EaseType.easeInOutSine));
+
 		yield return new WaitForSeconds(0.25f);
 		iTween.MoveTo (character, iTween.Hash("position",characterPosition3,"time",0.25f,"easetype",iTween.EaseType.easeInOutSine));
 		yield return new WaitForSeconds(0.25f);
@@ -117,12 +131,18 @@ public class MainMenuController : MonoBehaviour {
 		yield return new WaitForSeconds(0.25f);
 		iTween.MoveTo (character, iTween.Hash("position",characterPosition2,"time",0.25f,"easetype",iTween.EaseType.easeInOutSine));
 		yield return new WaitForSeconds(0.25f);
+		characterSitting.SetActive (true);
+		character.SetActive (false);
 		iTween.MoveTo (character, iTween.Hash("position",characterPosition1,"time",0.25f,"easetype",iTween.EaseType.easeInOutSine));
 
-		iTween.RotateTo(character, iTween.Hash("rotation",new Vector3(0f,car.transform.localEulerAngles.y,0f),"time",0.1f,"localRotation",true)); //TODO: current rotation
+//		iTween.RotateTo(characterSitting, iTween.Hash("rotation",new Vector3(0f,car.transform.localEulerAngles.y,0f),"time",0.1f,"localRotation",true));
+		iTween.RotateTo(character, iTween.Hash("rotation",new Vector3(0f,car.transform.localEulerAngles.y,0f),"time",0.1f,"localRotation",true)); 
 
 		character.GetComponent<RotationMovement> ().enabled = true;
 		character.GetComponent<RotationMovement> ().rotationValue = car.transform.localEulerAngles.y;
+
+//		characterSitting.GetComponent<RotationMovement> ().enabled = true;
+//		characterSitting.GetComponent<RotationMovement> ().rotationValue = car.transform.localEulerAngles.y;
 		StopCoroutine ("UnShowCharacter");
 	}
 	#endregion
@@ -131,6 +151,7 @@ public class MainMenuController : MonoBehaviour {
 	void OnCarSelection() {
 		btnSelectCharacter.SetActive (true);
 		btnSelectCar.SetActive (false);
+		stageSelectionPanel.SetActive (false);
 		iTween.MoveTo (btnStartRacing, iTween.Hash("y",-417f,"time",0.25f,"islocal",true));
 		iTween.ScaleTo (carSelection, iTween.Hash("scale",new Vector3(2f,2f,2f),"time",0.25f));
 	}
@@ -140,6 +161,8 @@ public class MainMenuController : MonoBehaviour {
 	void OnStartRacing() {
 		btnSelectCharacter.SetActive (true);
 		btnSelectCar.SetActive (true);
+		stageSelectionPanel.SetActive (true);
+		LoadSelectionButtons ();
 		iTween.MoveTo (btnStartRacing, iTween.Hash("y",-215f,"time",0.25f,"islocal",true));
 	}
 
@@ -148,20 +171,31 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	IEnumerator AnimateProgress() {
+		stageSelectionPanel.SetActive (false);
 		btnStartRacing.SetActive (false);
 		mainMenuPanel.SetActive (false);
 		loadingPanel.SetActive (true);
 
 		progressLoading.sliderValue = (1f/3f);
-				yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(3f);
 		progressLoading.sliderValue = (2f/3f);
-				yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(3f);
 		progressLoading.sliderValue = 1;
-				yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(1f);
 		
+		townPanel.SetActive (true);
+		yield return new WaitForSeconds(0.5f);
 		StopCoroutine ("AnimateProgress");
 		Application.LoadLevel(1);
 	}
 
 	#endregion
+
+	void LoadSelectionButtons() {
+		if (GameStats.AZ_OnVillage) {
+			GameObject.Find ("btnStage2").GetComponent<BoxCollider> ().enabled = true;
+			GameObject.Find ("btnStage2/Background").GetComponent<UISprite>().spriteName = "The_Village";
+		}
+	}
+
 }

@@ -7,13 +7,14 @@ public enum CAR {
 	RED,
 	BLUE,
 	GRAY,
+	YELLOW,
 }
 
 public class CarSelection : MonoBehaviour {
 
 	public static CarSelection instance; 
 	public GameObject car;
-	public Material[] carMaterials = new Material[4];
+	public Material[] carMaterials = new Material[5];
 	[HideInInspector] public CAR selectedCar;
 
 	void Awake() {

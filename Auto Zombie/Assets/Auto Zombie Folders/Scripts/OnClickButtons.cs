@@ -16,8 +16,11 @@ public class OnClickButtons : MonoBehaviour {
 		if(gameObject.name.Contains("btnNitro"))
 			PopupView.instance.OnUseNitro ();
 
-		if(gameObject.name.Contains("btnNextMap"))
-			Application.LoadLevel(2);
+		if (gameObject.name.Contains ("btnNextMap")) {
+				if (!GameStats.AZ_OnVillage)
+						GameStats.AZ_OnVillage = true;
+				Application.LoadLevel (2);
+		}
 	}
 
 	void PauseButtons() {
