@@ -269,6 +269,7 @@ public class PopupView : MonoBehaviour {
 
 	#region WIN
 	public void OnWin() {
+		GameStats.saveBestTime(RaceUIMobileSample._RaceManager.TimeTotal);
 		mainButtonsPanel.SetActive (false);
 		winPanel.SetActive (true);
 		isWin = true;
@@ -288,6 +289,8 @@ public class PopupView : MonoBehaviour {
 
 	void OnShowLosePopup() {
 		popupButtonsPanel.SetActive (true);
-		GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ()._showRightWindow = false;
+		//GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ()._showRightWindow = false;
+		GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ().windowRight.x = Screen.width / 2 - 135;
+		GameObject.Find ("_RaceManager").GetComponent<RaceUIMobileSample> ().windowRight.y = Screen.height - 215;
 	}
 }
