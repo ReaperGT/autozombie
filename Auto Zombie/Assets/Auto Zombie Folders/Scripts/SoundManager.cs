@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour {
 	void Start() 
 	{
 		if(audioSource == null) {
-			gameObject.AddComponent<AudioListener>();
+//			gameObject.AddComponent<AudioListener>();
 			audioSource = gameObject.AddComponent<AudioSource>();
 			audioSource.loop = true;
 		}

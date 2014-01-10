@@ -54,14 +54,14 @@ public class MainMenuController : MonoBehaviour {
 		Time.timeScale = 1f;
 		loadingPanel.SetActive (false);
 		iTween.MoveTo (logo, iTween.Hash("position",new Vector3(0.6f,0.7f,2.8f),"time",3f));
-//		SoundManager.instance.PlayMainMenuBGM ();
+		
 	}
 
 	void Start () {
 		if (instance == null)
 			instance = this;	
 
-		
+		SoundManager.instance.PlayMainMenuBGM ();
 	}
 
 	public void SwitchScreens(MMSCREEN toScreen) {
