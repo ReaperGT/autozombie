@@ -24,14 +24,22 @@ public class OnClickButtons : MonoBehaviour {
 	}
 
 	void PauseButtons() {
-		if (gameObject.name.Contains ("btnPause"))
+		if (gameObject.name.Contains ("btnPause")) {
 			OnPause ();
-		if (gameObject.name.Contains ("btnRetry"))
+			SoundManager.instance.PlayClickButtonSoundEffect();
+		}
+		if (gameObject.name.Contains ("btnRetry")) {
 			Application.LoadLevel (1);
-		if (gameObject.name.Contains ("btnQuit") || gameObject.name.Contains("btnHome"))
+			SoundManager.instance.PlayClickButtonSoundEffect();
+		}
+		if (gameObject.name.Contains ("btnQuit") || gameObject.name.Contains("btnHome")) {
 			Application.LoadLevel (0);
-		if (gameObject.name.Contains ("btnPlay"))
+			SoundManager.instance.PlayClickButtonSoundEffect();
+		}
+		if (gameObject.name.Contains ("btnPlay")) {
 			OnUnPause ();
+			SoundManager.instance.PlayClickButtonSoundEffect();
+		}
 	}
 
 	void OnPause() {
