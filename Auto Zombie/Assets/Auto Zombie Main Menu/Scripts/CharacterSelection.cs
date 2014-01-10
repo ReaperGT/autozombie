@@ -15,6 +15,7 @@ public class CharacterSelection : MonoBehaviour {
 	public static CharacterSelection instance;
 
 	public GameObject character;
+	public GameObject characterSitting;
 	public Material[] characterMaterials = new Material[4];
 		[HideInInspector] public CHAR selectedCharacter;
 
@@ -35,6 +36,7 @@ public class CharacterSelection : MonoBehaviour {
 		foreach(CHAR keyName in  Enum.GetValues(typeof(CHAR))) {
 			if (selected.Equals (keyName.ToString ())) {
 				character.renderer.material = characterMaterials [index];
+				characterSitting.renderer.material = characterMaterials [index];
 				selectedCharacter = keyName;
 				GameStats.AZ_selectedCharacter = (int) selectedCharacter;
 			}
