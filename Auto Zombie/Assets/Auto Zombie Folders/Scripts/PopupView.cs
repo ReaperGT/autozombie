@@ -161,10 +161,11 @@ public class PopupView : MonoBehaviour {
 		infectBackground.SetActive (false);
 		infectBackground2.SetActive (false);
 		infectBackgroundEnd.SetActive (true);
-
+		
 		StartCoroutine("ShowInfectionLabel");
-
+		
 		OnShowLosePopup ();
+		SoundManager.instance.PlayLoseResultSoundEffect ();
 	}
 
 	IEnumerator ShowInfectionLabel() {

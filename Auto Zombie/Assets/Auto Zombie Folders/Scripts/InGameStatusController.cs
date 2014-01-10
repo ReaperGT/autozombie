@@ -16,12 +16,15 @@ public class InGameStatusController : MonoBehaviour {
 	void OnTriggerEnter(Collider collider) {
 
 		if (gameObject.name.Contains ("Finish")) {
-
-			if (collider.tag.Contains ("AI"))
+			
+			if (collider.tag.Contains ("AI")) {
 				PopupView.instance.OnLose ();
-			else if(collider.tag.Contains("Car"))
+				SoundManager.instance.PlayLoseResultSoundEffect();
+			}
+			else if(collider.tag.Contains("Car")) {
 				PopupView.instance.OnWin ();
-
+				SoundManager.instance.PlayWinResultSoundEffect();
+			}
 		} else {
 			if (collider.tag.Contains ("AI")) {
 				PopupView.instance.OnInfect ();
