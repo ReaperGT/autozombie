@@ -55,6 +55,10 @@ public class MainMenuController : MonoBehaviour {
 		loadingPanel.SetActive (false);
 		iTween.MoveTo (logo, iTween.Hash("position",new Vector3(0.6f,0.7f,2.8f),"time",3f));
 		
+
+//		if (GameStats.AZ_OnVillage) {
+//			OnStartRacing();
+//		}
 	}
 
 	void Start () {
